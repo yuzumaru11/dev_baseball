@@ -1,14 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[ ]:
-
-
 #2000-2021のNPB選手を年代別にCSVへ
-
-
-# In[79]:
-
 
 from bs4 import BeautifulSoup
 import urllib.request as req
@@ -16,20 +8,12 @@ import pandas as pd
 import random
 import time
 
-
-# In[80]:
-
-
 teams = ['https://npb.jp/bis/players/search/yearly/@@@/1954001/'
         ,'https://npb.jp/bis/players/search/yearly/@@@/1961001/'
         ,'https://npb.jp/bis/players/search/yearly/@@@/1968001/'
         ,'https://npb.jp/bis/players/search/yearly/@@@/2012001/'
         ,'https://npb.jp/bis/players/search/yearly/@@@/1947001/'
         ,'https://npb.jp/bis/players/search/yearly/@@@/2006001/']
-
-
-# In[81]:
-
 
 def get_list(player, df):
     for i in range(len(player)):
@@ -39,9 +23,6 @@ def get_list(player, df):
         s = pd.Series([player_link, player_name[0]], index=["url", "player"])
         df = df.append(s, ignore_index=True)
     return df
-
-
-# In[82]:
 
 
 def write_csv(team):
@@ -69,69 +50,7 @@ def write_csv(team):
         df.to_csv(str(num) + '_' + team_name + '_' + 'data.csv', encoding = 'utf8',  header=False, index=False)
 
 
-# In[83]:
-
-
 for team in teams:
     write_csv(team)
 
-
-# In[84]:
-
-
 print('完了')
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
