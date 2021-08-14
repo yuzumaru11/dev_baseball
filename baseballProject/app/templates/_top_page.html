@@ -1,0 +1,137 @@
+
+
+<div class="container">
+  <h1 class="rank_head bg-central top-margin50 bottom-margin50 horizontal-margin">セ・リーグ</h1>
+  <table class="table table-condensed table-center1 table-fixed table-bordered-1 table-hover">
+  <thead class="bg-silverpink">
+    <tr>
+      <th scope="col">順位</th>
+      <th scope="col">球団</th>
+      <th scope="col">試合</th>
+      <th scope="col">勝利</th>
+      <th scope="col">敗戦</th>
+      <th scope="col">引分</th>
+      <th scope="col">勝率</th>
+      <th scope="col">打率</th>
+      <th scope="col">防御率</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for crank in cranks %}
+      <tr>
+        <th class="txt-center" scope="row">{{ crank.ranks1 }}</th>
+        <td>{{ crank.tsname }}</td>
+        <td class="txt-right">{{ crank.games }}</td>
+        <td class="txt-right">{{ crank.win }}</td>
+        <td class="txt-right">{{ crank.lose }}</td>
+        <td class="txt-right">{{ crank.draw }}</td>
+        <td class="txt-right" >{{ crank.winrate }}</td>
+        <td class="txt-right">{{ crank.hit }}</td>
+        <td class="txt-right">{{ crank.pitch }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div>
+
+
+<div class="container">
+　<h1 class="rank_head bg-pacific top-margin50 bottom-margin50 horizontal-margin">パ・リーグ</h1>
+  <table class="table table-condensed table-center1 table-fixed table-bordered-1 table-hover">
+  <thead class="bg-silverpink">
+    <tr>
+      <th scope="col">順位</th>
+      <th scope="col">球団</th>
+      <th scope="col">試合</th>
+      <th scope="col">勝利</th>
+      <th scope="col">敗戦</th>
+      <th scope="col">引分</th>
+      <th scope="col">勝率</th>
+      <th scope="col">打率</th>
+      <th scope="col">防御率</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for prank in pranks %}
+      <tr>
+        <th scope="row" class="txt-center">{{ prank.ranks1 }}</th>
+        <td>{{ prank.tsname }}</td>
+        <td class="txt-right">{{ prank.games }}</td>
+        <td class="txt-right">{{ prank.win }}</td>
+        <td class="txt-right">{{ prank.lose }}</td>
+        <td class="txt-right">{{ prank.draw }}</td>
+        <td class="txt-right">{{ prank.winrate }}</td>
+        <td class="txt-right">{{ prank.hit }}</td>
+        <td class="txt-right">{{ prank.pitch }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+
+<div class="container">
+　<h1 class="rank_head bg-central top-margin50 bottom-margin50 horizontal-margin">セ・リーグ打撃成績</h1>
+  <table class="table table-condensed table-center1 table-bordered-1 table-hover">
+    <thead class="bg-silverpink">
+    <tr>
+      <th scope="col">順位</th>
+      <th scope="col">選手名</th>
+      <th scope="col">打率</th>
+      <th scope="col">試合</th>
+      <th scope="col">打席</th>
+      <th scope="col">打数</th>
+      <th scope="col">安打</th>
+      <th scope="col">二塁打</th>
+      <th scope="col">三塁打</th>
+      <th scope="col">本塁打</th>
+      <th scope="col">塁打</th>
+      <th scope="col">打点</th>
+      <th scope="col">得点</th>
+      <th scope="col">三振</th>
+      <th scope="col">四球</th>
+      <th scope="col">死球</th>
+      <th scope="col">犠打</th>
+      <th scope="col">犠飛</th>
+      <th scope="col">盗塁</th>
+      <th scope="col">盗塁死</th>
+      <th scope="col">併殺打</th>
+      <th scope="col">出塁率</th>
+      <th scope="col">長打率</th>
+      <th scope="col">ＯＰＳ</th>
+      </tr>
+  </thead>
+  <tbody>
+    {% for cHit in cHits %}
+      <tr>
+        <th scope="row" class="txt-center">{{ forloop.counter }}</th>
+        <td class>{{ cHit.player_name }}</td>
+        <td class="txt-right">{{ cHit.hit_rate }}</td>
+        <td class="txt-right">{{ cHit.games }}</td>
+        <td class="txt-right">{{ cHit.at_bat1 }}</td>
+        <td class="txt-right">{{ cHit.at_bat2 }}</td>
+        <td class="txt-right">{{ cHit.hit }}</td>
+        <td class="txt-right">{{ cHit.double1 }}</td>
+        <td class="txt-right">{{ cHit.triple }}</td>
+        <td class="txt-right">{{ cHit.homerun }}</td>
+        <td class="txt-right">{{ cHit.basehit }}</td>
+        <td class="txt-right">{{ cHit.rbi }}</td>
+        <td class="txt-right">{{ cHit.score }}</td>
+        <td class="txt-right">{{ cHit.strikeout }}</td>
+        <td class="txt-right">{{ cHit.walks }}</td>
+        <td class="txt-right">{{ cHit.hit_by_pitch }}</td>
+        <td class="txt-right">{{ cHit.sacrifice }}</td>
+        <td class="txt-right">{{ cHit.sacrifice_fly }}</td>
+        <td class="txt-right">{{ cHit.steal }}</td>
+        <td class="txt-right">{{ cHit.steal_dead }}</td>
+        <td class="txt-right">{{ cHit.double_out }}</td>
+        <td class="txt-right">{{ cHit.on_base }}</td>
+        <td class="txt-right">{{ cHit.slugging }}</td>
+        <td class="txt-right">{{ cHit.ops }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
