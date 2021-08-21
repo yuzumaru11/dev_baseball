@@ -1,0 +1,1 @@
+python C:\Users\nanahsi\Desktop\dev_baseball\ranks_insert.py
