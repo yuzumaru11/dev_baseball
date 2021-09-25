@@ -1,0 +1,1 @@
+everyday.dat：実行日の順位で更新
