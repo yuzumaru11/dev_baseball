@@ -1,5 +1,51 @@
+
+
+
+
+<div id="tesms" class="container top-margin50">
+  <ul class="list-inline position-center">
+    <li class="list-inline-item"><button type="button" id="giants" v-on:click="getStats" class="btn bg-giants">巨人</button></li>
+    <li class="list-inline-item right-padding20"><button id="tigers" type="button" v-on:click="getStats" class="btn bg-tigers">阪神</button></li>
+    <li class="list-inline-item right-padding20"><button id="swallows" type="button" v-on:click="getStats" class="btn bg-yakult">東京</button></li>
+    <li class="list-inline-item right-padding20"><button id="dragons" type="button" v-on:click="getStats" class="btn bg-dragons">中日</button></li>
+    <li class="list-inline-item right-padding20"><button id="baystars" type="button" v-on:click="getStats" class="btn bg-beystars">横浜</button></li>
+    <li class="list-inline-item right-padding20"><button id="carp" type="button" v-on:click="getStats" class="btn bg-carp">広島</button></li>
+    <li class="list-inline-item right-padding20 "><button id="hawks" type="button" v-on:click="getStats" class="btn bg-hawks">ＳＢ</button></li>
+    <li class="list-inline-item right-padding20 "><button id="buffaloes" type="button" v-on:click="getStats" class="btn bg-orix">オリ</button></li>
+    <li class="list-inline-item right-padding20 "><button id="eagles" type="button" v-on:click="getStats" class="btn bg-eagles">楽天</button></li>
+    <li class="list-inline-item right-padding20 "><button id="marines" type="button" v-on:click="getStats" class="btn bg-lotte">千葉</button></li>
+    <li class="list-inline-item right-padding20 "><button id="lions" type="button" v-on:click="getStats" class="btn bg-lions">西武</button></li>
+    <li class="list-inline-item right-padding20 "><button id="fighters" type="button" v-on:click="getStats" class="btn bg-fighters">ハム</button></li>
+  </ul>
+</div>
+
+<div id="app"></div>
+<script>
+  Vue.createApp({
+      el: '#tesms',
+      data(){
+          return {
+          }
+      },
+      methods: {
+          getStats: function(event){
+              var team = event.currentTarget.attributes.id.value
+              axios.get('./', {　
+                    params: {
+                        teams: team
+                    }
+			            })
+                  .then(response => console.log(response.data))
+                  .catch(error => console.log(error))
+          }
+      }
+
+  }).mount('#tesms')
+</script>
+
+
 <div class="container">
-　<h1 class="rank_head bg-pacific top-margin50 bottom-margin50 horizontal-margin">セ・リーグ打撃成績</h1>
+　<h1 class="rank_head bg-pacific top-margin50 bottom-margin50 horizontal-margin">パ・リーグ打撃成績</h1>
   <table class="table table-condensed table-center1 table-bordered-1 table-hover">
     <thead class="bg-silverpink">
     <tr>
@@ -30,32 +76,32 @@
       </tr>
   </thead>
   <tbody>
-    {% for cHit in cHits %}
+    {% for bstat in bstats %}
       <tr>
-        <th scope="row" class="txt-right">{{ cHit.rank }}</th>
-        <td class="txt-right">{{ cHit.player_id }}</td>
-        <td class="txt-right">{{ cHit.hit_rate }}</td>
-        <td class="txt-right">{{ cHit.games }}</td>
-        <td class="txt-right">{{ cHit.at_bat1 }}</td>
-        <td class="txt-right">{{ cHit.at_bat2 }}</td>
-        <td class="txt-right">{{ cHit.single_hit }}</td>
-        <td class="txt-right">{{ cHit.double_hit }}</td>
-        <td class="txt-right">{{ cHit.triple_hit }}</td>
-        <td class="txt-right">{{ cHit.homerun }}</td>
-        <td class="txt-right">{{ cHit.basehit }}</td>
-        <td class="txt-right">{{ cHit.rbi }}</td>
-        <td class="txt-right">{{ cHit.score }}</td>
-        <td class="txt-right">{{ cHit.strikeout }}</td>
-        <td class="txt-right">{{ cHit.walks }}</td>
-        <td class="txt-right">{{ cHit.hit_by_pitch }}</td>
-        <td class="txt-right">{{ cHit.sacrifice }}</td>
-        <td class="txt-right">{{ cHit.sacrifice_fly }}</td>
-        <td class="txt-right">{{ cHit.steal }}</td>
-        <td class="txt-right">{{ cHit.steal_dead }}</td>
-        <td class="txt-right">{{ cHit.double_out }}</td>
-        <td class="txt-right">{{ cHit.on_base }}</td>
-        <td class="txt-right">{{ cHit.slugging }}</td>
-        <td class="txt-right">{{ cHit.ops }}</td>
+        <th scope="row" class="txt-center">{{ forloop.counter }}</th>
+        <td class>{{ bstat.player_name }}</td>
+        <td class="txt-right">{{ bstat.hit_rate }}</td>
+        <td class="txt-right">{{ bstat.games }}</td>
+        <td class="txt-right">{{ bstat.at_bat1 }}</td>
+        <td class="txt-right">{{ bstat.at_bat2 }}</td>
+        <td class="txt-right">{{ bstat.hit }}</td>
+        <td class="txt-right">{{ bstat.double1 }}</td>
+        <td class="txt-right">{{ bstat.triple }}</td>
+        <td class="txt-right">{{ bstat.homerun }}</td>
+        <td class="txt-right">{{ bstat.basehit }}</td>
+        <td class="txt-right">{{ bstat.rbi }}</td>
+        <td class="txt-right">{{ bstat.score }}</td>
+        <td class="txt-right">{{ bstat.strikeout }}</td>
+        <td class="txt-right">{{ bstat.walks }}</td>
+        <td class="txt-right">{{ bstat.hit_by_pitch }}</td>
+        <td class="txt-right">{{ bstat.sacrifice }}</td>
+        <td class="txt-right">{{ bstat.sacrifice_fly }}</td>
+        <td class="txt-right">{{ bstat.steal }}</td>
+        <td class="txt-right">{{ bstat.steal_dead }}</td>
+        <td class="txt-right">{{ bstat.double_out }}</td>
+        <td class="txt-right">{{ bstat.on_base }}</td>
+        <td class="txt-right">{{ bstat.slugging }}</td>
+        <td class="txt-right">{{ bstat.ops }}</td>
       </tr>
     {% endfor %}
   </tbody>

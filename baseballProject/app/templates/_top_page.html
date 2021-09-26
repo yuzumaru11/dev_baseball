@@ -1,7 +1,7 @@
 
 
 <div class="container">
-  <h1 class="rank_head bg-central top-margin50 bottom-margin50 horizontal-margin">セ・リーグ</h1>
+  <h1 class="rank_head bg-central top-margin50 bottom-margin50 horizontal-margin">セ・リーグ順位</h1>
   <table class="table table-condensed table-center1 table-fixed table-bordered-1 table-hover">
   <thead class="bg-silverpink">
     <tr>
@@ -37,7 +37,7 @@
 
 
 <div class="container">
-　<h1 class="rank_head bg-pacific top-margin50 bottom-margin50 horizontal-margin">パ・リーグ</h1>
+　<h1 class="rank_head bg-pacific top-margin50 bottom-margin50 horizontal-margin">パ・リーグ順位</h1>
   <table class="table table-condensed table-center1 table-fixed table-bordered-1 table-hover">
   <thead class="bg-silverpink">
     <tr>
@@ -69,7 +69,6 @@
   </tbody>
 </table>
 </div>
-
 
 
 <div class="container">
@@ -130,6 +129,197 @@
         <td class="txt-right">{{ cHit.on_base }}</td>
         <td class="txt-right">{{ cHit.slugging }}</td>
         <td class="txt-right">{{ cHit.ops }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+<div class="container">
+　<h1 class="rank_head bg-pacific top-margin50 bottom-margin50 horizontal-margin">パ・リーグ打撃成績</h1>
+  <table class="table table-condensed table-center1 table-bordered-1 table-hover">
+    <thead class="bg-silverpink">
+    <tr>
+      <th scope="col">順位</th>
+      <th scope="col">選手名</th>
+      <th scope="col">打率</th>
+      <th scope="col">試合</th>
+      <th scope="col">打席</th>
+      <th scope="col">打数</th>
+      <th scope="col">安打</th>
+      <th scope="col">二塁打</th>
+      <th scope="col">三塁打</th>
+      <th scope="col">本塁打</th>
+      <th scope="col">塁打</th>
+      <th scope="col">打点</th>
+      <th scope="col">得点</th>
+      <th scope="col">三振</th>
+      <th scope="col">四球</th>
+      <th scope="col">死球</th>
+      <th scope="col">犠打</th>
+      <th scope="col">犠飛</th>
+      <th scope="col">盗塁</th>
+      <th scope="col">盗塁死</th>
+      <th scope="col">併殺打</th>
+      <th scope="col">出塁率</th>
+      <th scope="col">長打率</th>
+      <th scope="col">ＯＰＳ</th>
+      </tr>
+  </thead>
+  <tbody>
+    {% for pHit in pHits %}
+      <tr>
+        <th scope="row" class="txt-center">{{ forloop.counter }}</th>
+        <td class>{{ pHit.player_name }}</td>
+        <td class="txt-right">{{ pHit.hit_rate }}</td>
+        <td class="txt-right">{{ pHit.games }}</td>
+        <td class="txt-right">{{ pHit.at_bat1 }}</td>
+        <td class="txt-right">{{ pHit.at_bat2 }}</td>
+        <td class="txt-right">{{ pHit.hit }}</td>
+        <td class="txt-right">{{ pHit.double1 }}</td>
+        <td class="txt-right">{{ pHit.triple }}</td>
+        <td class="txt-right">{{ pHit.homerun }}</td>
+        <td class="txt-right">{{ pHit.basehit }}</td>
+        <td class="txt-right">{{ pHit.rbi }}</td>
+        <td class="txt-right">{{ pHit.score }}</td>
+        <td class="txt-right">{{ pHit.strikeout }}</td>
+        <td class="txt-right">{{ pHit.walks }}</td>
+        <td class="txt-right">{{ pHit.hit_by_pitch }}</td>
+        <td class="txt-right">{{ pHit.sacrifice }}</td>
+        <td class="txt-right">{{ pHit.sacrifice_fly }}</td>
+        <td class="txt-right">{{ pHit.steal }}</td>
+        <td class="txt-right">{{ pHit.steal_dead }}</td>
+        <td class="txt-right">{{ pHit.double_out }}</td>
+        <td class="txt-right">{{ pHit.on_base }}</td>
+        <td class="txt-right">{{ pHit.slugging }}</td>
+        <td class="txt-right">{{ pHit.ops }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+<div class="container">
+　<h1 class="rank_head bg-central top-margin50 bottom-margin50 horizontal-margin">セ・リーグ投手成績</h1>
+  <table class="table table-condensed table-center1 table-bordered-1 table-hover">
+    <thead class="bg-silverpink">
+    <tr>
+      <th scope="col">順位</th>
+      <th scope="col">選手名</th>
+      <th scope="col">防御率</th>
+      <th scope="col">登板</th>
+      <th scope="col">勝利</th>
+      <th scope="col">敗北</th>
+      <th scope="col">セーブ</th>
+      <th scope="col">ホールド</th>
+      <th scope="col">ホールドP</th>
+      <th scope="col">完投</th>
+      <th scope="col">完封勝</th>
+      <th scope="col">無四球</th>
+      <th scope="col">勝率</th>
+      <th scope="col">投球回</th>
+      <th scope="col">安打</th>
+      <th scope="col">本塁打</th>
+      <th scope="col">四球</th>
+      <th scope="col">死球</th>
+      <th scope="col">三振</th>
+      <th scope="col">暴投</th>
+      <th scope="col">ボーク</th>
+      <th scope="col">失点</th>
+      <th scope="col">自責点</th>
+      </tr>
+  </thead>
+  <tbody>
+    {% for cPicth in cPicthes %}
+      <tr>
+        <th scope="row" class="txt-center">{{ forloop.counter }}</th>
+        <td class>{{ cPicth.player_name }}</td>
+        <td class="txt-right">{{ cPicth.era }}</td>
+        <td class="txt-right">{{ cPicth.games }}</td>
+        <td class="txt-right">{{ cPicth.victory }}</td>
+        <td class="txt-right">{{ cPicth.lose }}</td>
+        <td class="txt-right">{{ cPicth.save1 }}</td>
+        <td class="txt-right">{{ cPicth.hold1 }}</td>
+        <td class="txt-right">{{ cPicth.holdp }}</td>
+        <td class="txt-right">{{ cPicth.complete_pitch }}</td>
+        <td class="txt-right">{{ cPicth.complete_game }}</td>
+        <td class="txt-right">{{ cPicth.no_four_pitch }}</td>
+        <td class="txt-right">{{ cPicth.victory_rate }}</td>
+        <td class="txt-right">{{ cPicth.pitch_innings }}</td>
+        <td class="txt-right">{{ cPicth.hit1 }}</td>
+        <td class="txt-right">{{ cPicth.homerun }}</td>
+        <td class="txt-right">{{ cPicth.four_ball }}</td>
+        <td class="txt-right">{{ cPicth.dead_ball }}</td>
+        <td class="txt-right">{{ cPicth.strikeout }}</td>
+        <td class="txt-right">{{ cPicth.wild_pitch }}</td>
+        <td class="txt-right">{{ cPicth.balk }}</td>
+        <td class="txt-right">{{ cPicth.runs_allowed }}</td>
+        <td class="txt-right">{{ cPicth.earned_run }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+<div class="container">
+　<h1 class="rank_head bg-pacific top-margin50 bottom-margin50 horizontal-margin">パ・リーグ投手成績</h1>
+  <table class="table table-condensed table-center1 table-bordered-1 table-hover">
+    <thead class="bg-silverpink">
+    <tr>
+      <th scope="col">順位</th>
+      <th scope="col">選手名</th>
+      <th scope="col">防御率</th>
+      <th scope="col">登板</th>
+      <th scope="col">勝利</th>
+      <th scope="col">敗北</th>
+      <th scope="col">セーブ</th>
+      <th scope="col">ホールド</th>
+      <th scope="col">ホールドP</th>
+      <th scope="col">完投</th>
+      <th scope="col">完封勝</th>
+      <th scope="col">無四球</th>
+      <th scope="col">勝率</th>
+      <th scope="col">投球回</th>
+      <th scope="col">安打</th>
+      <th scope="col">本塁打</th>
+      <th scope="col">四球</th>
+      <th scope="col">死球</th>
+      <th scope="col">三振</th>
+      <th scope="col">暴投</th>
+      <th scope="col">ボーク</th>
+      <th scope="col">失点</th>
+      <th scope="col">自責点</th>
+      </tr>
+  </thead>
+  <tbody>
+    {% for pPicth in pPicthes %}
+      <tr>
+        <th scope="row" class="txt-center">{{ forloop.counter }}</th>
+        <td class>{{ pPicth.player_name }}</td>
+        <td class="txt-right">{{ pPicth.era }}</td>
+        <td class="txt-right">{{ pPicth.games }}</td>
+        <td class="txt-right">{{ pPicth.victory }}</td>
+        <td class="txt-right">{{ pPicth.lose }}</td>
+        <td class="txt-right">{{ pPicth.save1 }}</td>
+        <td class="txt-right">{{ pPicth.hold1 }}</td>
+        <td class="txt-right">{{ pPicth.holdp }}</td>
+        <td class="txt-right">{{ pPicth.complete_pitch }}</td>
+        <td class="txt-right">{{ pPicth.complete_game }}</td>
+        <td class="txt-right">{{ pPicth.no_four_pitch }}</td>
+        <td class="txt-right">{{ pPicth.victory_rate }}</td>
+        <td class="txt-right">{{ pPicth.pitch_innings }}</td>
+        <td class="txt-right">{{ pPicth.hit1 }}</td>
+        <td class="txt-right">{{ pPicth.homerun }}</td>
+        <td class="txt-right">{{ pPicth.four_ball }}</td>
+        <td class="txt-right">{{ pPicth.dead_ball }}</td>
+        <td class="txt-right">{{ pPicth.strikeout }}</td>
+        <td class="txt-right">{{ pPicth.wild_pitch }}</td>
+        <td class="txt-right">{{ pPicth.balk }}</td>
+        <td class="txt-right">{{ pPicth.runs_allowed }}</td>
+        <td class="txt-right">{{ pPicth.earned_run }}</td>
       </tr>
     {% endfor %}
   </tbody>
