@@ -8,6 +8,7 @@ from .views import NewsView
 urlpatterns = [
     path('', IndexView.as_view()),
     path('teams/', TeamsView.as_view()),
+    path('teams/<str:team>/', TeamsView.as_view(), name='TeamsView'),
     path('player/', PlayerView.as_view()),
     path('library/', LibraryView.as_view()),
     path('news/', NewsView.as_view()),

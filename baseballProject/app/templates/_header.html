@@ -1,7 +1,7 @@
-<header>
-  <nav class="navbar navbar-expand navbar-dark bg-primary nav-min-width">
+<header class="sticky-top">
+  <nav class="navbar navbar-expand navbar-dark bg-primary nav-min-width sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">bb365</a>
+      <a class="navbar-brand" href="../">bb365</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,21 +9,39 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home
-              <span class="visually-hidden">(current)</span>
-            </a>
+            {% if active_path == "top" %}
+                <a class="nav-link active" href="./">Home</a>
+              {% else %}
+                <a class="nav-link" href="../">Home</a>
+            {% endif %}
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="teams/">チーム成績</a>
+            {% if active_path == "teams" %}
+                <a class="nav-link active" href="./">チーム成績</a>
+              {% else %}
+                <a class="nav-link" href="../teams/">チーム成績</a>
+            {% endif %}
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="player/">個人成績</a>
+            {% if active_path == "player" %}
+                <a class="nav-link active" href="./">個人成績</a>
+              {% else %}
+                <a class="nav-link" href="../player/">個人成績</a>
+            {% endif %}
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="library/">過去の成績</a>
+            {% if active_path == "library" %}
+                <a class="nav-link active" href="./">過去の成績</a>
+              {% else %}
+                <a class="nav-link" href="../library">過去の成績</a>
+            {% endif %}
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="news/">ニュース</a>
+            {% if active_path == "news" %}
+                <a class="nav-link active" href="./">ニュース</a>
+              {% else %}
+                <a class="nav-link" href="../news">ニュース</a>
+            {% endif %}
           </li>
         </ul>
       </div>

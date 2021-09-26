@@ -7,7 +7,7 @@
   min-width: 1200px;
 }
 
-. overflow-visible{
+.overflow-visible{
   overflow:visible;
 }
 
@@ -28,10 +28,23 @@
   margin-top: 50px;
 }
 
-.horizontal-margin {
+.right-padding20 {
+  padding-left: 25px;
+}
+
+.position-center {
+  text-align: center;
+}
+
+.horizontal- {
   margin-left: auto;
   margin-right: auto;
 }
+
+.test-border{
+  border: 1px solid #000000;
+}
+
 
 .bg-central {
   background: #66cdaa;
@@ -55,7 +68,6 @@
   border-width: 0 1px;
   border-style: solid;
   border-color: #a9a9a9;
-
 }
 
 .table-fixed {
@@ -85,3 +97,52 @@
 .txt-center {
   text-align: center;
 }
+
+.bg-giants {
+  background-color: rgba(242, 121, 0, 0.8);
+}
+
+.bg-tigers {
+  background-color: rgba(255, 255, 0, 0.7);
+}
+
+.bg-yakult {
+  background-color: rgba(60, 179, 113, 0.7);
+}
+
+.bg-dragons {
+  background-color: rgba(0, 0, 255, 0.6);
+}
+
+.bg-beystars {
+  background-color: rgba(0, 97, 183, 0.5);
+}
+
+.bg-carp {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+.bg-hawks {
+  background-color: rgba(242, 202, 0, 0.8);
+}
+
+.bg-orix {
+  background-color: rgba(1, 15, 41, 0.4);
+}
+
+.bg-lions {
+  background-color: rgba(44, 159, 232, 0.5);
+}
+
+.bg-eagles {
+  background-color: rgba(132, 0, 0, 0.6);
+}
+
+.bg-fighters {
+  background-color: rgba(255, 215, 0, 0.5);
+}
+
+.bg-lotte {
+  background-color: rgba(34, 24, 21, 0.5);
+}
+
